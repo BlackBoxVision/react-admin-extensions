@@ -1,7 +1,1 @@
-'use strict';
-
-module.exports = raLayout;
-
-function raLayout() {
-    // TODO
-}
+export * from "./layout";
