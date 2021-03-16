@@ -73,7 +73,7 @@ export const App = () => {
   return (
     <Admin 
       dataProvider={dataProvider}
-      layout={props => <Layout {...props} items={menuItems} />}
+      layout={props => <Layout {...props} items={items} />}
     >
       <Resource name="users" list={ListGuesser} />
     </Admin>
