@@ -7,8 +7,6 @@ import DefaultIcon from "@material-ui/icons/ViewList";
 
 import { CollapsibleMenu } from "../collapsible-menu";
 
-import { useStyles } from "./styles";
-
 // TODO: improve typings
 export type NestedMenuProps = {
   items: any[];
@@ -16,8 +14,6 @@ export type NestedMenuProps = {
 
 export const NestedMenu: React.FC<NestedMenuProps> = ({ items = [] }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
-
-  const styles = useStyles();
 
   const renderItems = ({
     type,
@@ -55,7 +51,7 @@ export const NestedMenu: React.FC<NestedMenuProps> = ({ items = [] }) => {
     );
   };
 
-  return <div className={styles.root}>{items.map(renderItems)}</div>;
+  return <div>{items.map(renderItems)}</div>;
 };
 
 NestedMenu.displayName = "NestedMenu";

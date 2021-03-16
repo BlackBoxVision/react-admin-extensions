@@ -19,7 +19,8 @@ export const UserProfile: React.FC<UserProfileProps> = () => {
     const firstLetters = user.fullName
       .split(" ")
       .map((parts: any) => parts[0])
-      .join("");
+      .join("")
+      .toUpperCase();
 
     return (
       <Tooltip title={user.fullName} aria-label={user.fullName}>

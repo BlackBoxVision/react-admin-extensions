@@ -10,7 +10,8 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "0.75rem",
   },
   menuLink: {
-    height: 56,
+    // TODO: improve overrides
+    minHeight: "56px !important",
     fontWeight: "bold",
     textTransform: "none",
   },
