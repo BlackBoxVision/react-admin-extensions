@@ -15,8 +15,8 @@ export type LayoutProps = {
   AppBar?: any;
   Sidebar?: any;
   items: any[];
-  title: string;
-  dashboard: any;
+  title?: string;
+  dashboard?: any;
 };
 
 export const Layout: React.FC<LayoutProps> = ({
