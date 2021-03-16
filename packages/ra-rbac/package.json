@@ -1,0 +1,58 @@
+{
+  "name": "@blackbox-vision/ra-rbac",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "JonatanSalas <jonatan.salas@blackbox-vision.tech>",
+  "homepage": "https://github.com/BlackBoxVision/react-admin-extensions#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://JonatanSalas:jonisaa123.0@github.com/BlackBoxVision/react-admin-extensions.git"
+  },
+  "scripts": {
+    "clean": "rimraf pkg",
+    "publish": "pika publish",
+    "build": "npm run clean && pika build",
+    "version": "npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/BlackBoxVision/react-admin-extensions/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-node": "^0.9.2",
+    "@pika/plugin-build-types": "^0.9.2",
+    "@pika/plugin-build-web": "^0.9.2",
+    "@pika/plugin-standard-pkg": "^0.9.2",
+    "@types/react": "^16.9.48",
+    "react": "^16.13.1",
+    "react-admin": "^3.13.4",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-admin": "^3.13.4"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-build-types"
+      ]
+    ]
+  }
+}
