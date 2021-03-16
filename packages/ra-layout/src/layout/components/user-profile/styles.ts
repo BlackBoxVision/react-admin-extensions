@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme) => ({
   small: {
     width: theme.spacing(3),
     height: theme.spacing(3),
+    fontSize: "0.75rem",
   },
   menuLink: {
     height: 56,
