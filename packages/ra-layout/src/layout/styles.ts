@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     height: "calc(100vh - 56px)",
   },
-  header: {
+  appBar: {
     height: 56,
     width: ({ isSideDrawerOpen }: any) =>
       isSideDrawerOpen ? "calc(100% - 240px)" : "calc(100% - 55px)",

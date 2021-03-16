@@ -36,12 +36,14 @@ export const Layout: React.FC<LayoutProps> = ({
 
   useEffect(() => {
     dispatch(setSidebarVisibility(true));
-  }, []);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setSidebarVisibility]);
 
   return (
     <div className={styles.root}>
       <div className={styles.container}>
-        <AppBar title={title} className={styles.header} />
+        <AppBar title={title} open={isSidebarOpen} className={styles.appBar} />
         <main className={styles.contentWithSidebar}>
           <Sidebar className={styles.sidebar}>
             <Menu items={items} dashboard={dashboard} />
