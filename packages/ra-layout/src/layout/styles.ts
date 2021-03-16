@@ -18,15 +18,16 @@ export const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     height: 56,
-    width: ({ isSideDrawerOpen }: any) =>
-      isSideDrawerOpen ? "calc(100% - 240px)" : "calc(100% - 55px)",
+  },
+  appBarWhenSidebarOpen: {
+    width: "calc(100% - 240px)",
+  },
+  appBarWhenSidebarClosed: {
+    width: "calc(100% - 55px)",
   },
   contentWithSidebar: {
     display: "flex",
     flexGrow: 1,
-  },
-  sidebar: {
-    width: ({ isSideDrawerOpen }: any) => (isSideDrawerOpen ? 240 : 55),
   },
   content: {
     flexGrow: 2,
@@ -34,7 +35,11 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: "3em",
     flexDirection: "column",
     padding: theme.spacing(3),
-    paddingLeft: ({ isSideDrawerOpen }: any) =>
-      isSideDrawerOpen ? "calc(240px + 24px)" : "calc(55px + 24px)",
+  },
+  contentWhenSidebarOpen: {
+    paddingLeft: "calc(240px + 24px)",
+  },
+  contentWhenSidebarClosed: {
+    paddingLeft: "calc(55px + 24px)",
   },
 }));

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React, { useState } from "react";
 import List from "@material-ui/core/List";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -24,9 +25,7 @@ export const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const styles = useStyles({
-    isSidebarOpen,
-  });
+  const styles = useStyles();
 
   const MenuItemContainer = ({ children }) => {
     if (isSidebarOpen || isOpen) {
@@ -53,7 +52,14 @@ export const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
         </MenuItem>
       </MenuItemContainer>
       <Collapse in={isOpen} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding className={styles.list}>
+        <List
+          component="div"
+          disablePadding
+          className={clsx({
+            [styles.listWhenSidebarOpen]: !!isSidebarOpen,
+            [styles.listWhenSidebarClosed]: !isSidebarOpen,
+          })}
+        >
           {children}
         </List>
       </Collapse>

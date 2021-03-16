@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Notification, setSidebarVisibility } from "react-admin";
@@ -30,9 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const dispatch = useDispatch();
 
-  const styles = useStyles({
-    isSidebarOpen,
-  });
+  const styles = useStyles();
 
   useEffect(() => {
     dispatch(setSidebarVisibility(true));
@@ -43,12 +42,28 @@ export const Layout: React.FC<LayoutProps> = ({
   return (
     <div className={styles.root}>
       <div className={styles.container}>
-        <AppBar title={title} open={isSidebarOpen} className={styles.appBar} />
+        <AppBar
+          title={title}
+          open={isSidebarOpen}
+          className={clsx({
+            [styles.appBar]: true,
+            [styles.appBarWhenSidebarOpen]: !!isSidebarOpen,
+            [styles.appBarWhenSidebarClosed]: !isSidebarOpen,
+          })}
+        />
         <main className={styles.contentWithSidebar}>
-          <Sidebar className={styles.sidebar}>
+          <Sidebar>
             <Menu items={items} dashboard={dashboard} />
           </Sidebar>
-          <div className={styles.content}>{children}</div>
+          <div
+            className={clsx({
+              [styles.content]: true,
+              [styles.contentWhenSidebarOpen]: !!isSidebarOpen,
+              [styles.contentWhenSidebarClosed]: !isSidebarOpen,
+            })}
+          >
+            {children}
+          </div>
         </main>
         <Notification />
       </div>

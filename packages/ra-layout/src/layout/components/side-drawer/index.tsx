@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 import { useSelector } from "react-redux";
 import Divider from "@material-ui/core/Divider";
@@ -8,27 +9,29 @@ import LogoutIcon from "@material-ui/icons/PowerSettingsNewOutlined";
 import { useStyles } from "./styles";
 import { UserProfile } from "../user-profile";
 
-export type SideDrawerProps = {
-  isSidebarOpen?: boolean;
-};
+export type SideDrawerProps = {};
 
 export const SideDrawer: React.FC<SideDrawerProps> = ({ children }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
 
-  const styles = useStyles({
-    isSidebarOpen,
-  });
+  const styles = useStyles();
 
   return (
     <Sidebar
       classes={
         {
-          drawerPaper: styles.sidebar,
+          drawerPaper: clsx({
+            [styles.sidebarWhenOpen]: !!isSidebarOpen,
+            [styles.sidebarWhenClosed]: !isSidebarOpen,
+          }),
         } as any
       }
       PaperProps={{
-        className: styles.sidebar,
+        className: clsx({
+          [styles.sidebarWhenOpen]: !!isSidebarOpen,
+          [styles.sidebarWhenClosed]: !isSidebarOpen,
+        }),
         elevation: 2,
       }}
     >
