@@ -41,6 +41,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ children }) => {
         {children}
         <Divider className={styles.bottomDivider} />
         <MenuItemLink
+          id="logout"
           to="/login"
           onClick={logout}
           leftIcon={<LogoutIcon />}
