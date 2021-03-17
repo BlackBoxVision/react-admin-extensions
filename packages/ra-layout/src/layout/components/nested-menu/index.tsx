@@ -36,6 +36,7 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
 
         return (
           <MenuItemLink
+            className={styles.listItem}
             key={`Item.${type}.${label}`}
             to={{
               pathname: `/${name}`,
@@ -52,11 +53,7 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
       [isSidebarOpen]
     );
 
-    return (
-      <div id="menu" className={styles.list}>
-        {items.map(renderItems)}
-      </div>
-    );
+    return <div id="menu">{items.map(renderItems)}</div>;
   }
 );
 

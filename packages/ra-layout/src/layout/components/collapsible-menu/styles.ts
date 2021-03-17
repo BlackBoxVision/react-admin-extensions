@@ -4,6 +4,9 @@ export const useStyles = makeStyles((theme) => ({
   icon: {
     minWidth: theme.spacing(5),
   },
+  listItem: {
+    minHeight: "48px !important",
+  },
   listWhenSidebarOpen: {
     "& a": {
       paddingLeft: theme.spacing(4),

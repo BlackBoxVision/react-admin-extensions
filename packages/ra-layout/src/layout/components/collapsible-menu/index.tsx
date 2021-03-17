@@ -42,7 +42,11 @@ export const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
   return (
     <>
       <MenuItemContainer>
-        <MenuItem button onClick={() => setIsOpen(!isOpen)}>
+        <MenuItem
+          button
+          className={styles.listItem}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <ListItemIcon className={styles.icon}>
             {isOpen ? <ExpandMore /> : <ChevronRight />}
           </ListItemIcon>

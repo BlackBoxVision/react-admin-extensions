@@ -39,12 +39,13 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ children }) => {
         <UserProfile />
         <Divider />
         {children}
-        <Divider className={styles.bottomDivider} />
+        <Divider />
         <MenuItemLink
           id="logout"
           to="/login"
           onClick={logout}
           leftIcon={<LogoutIcon />}
+          className={styles.listItem}
           primaryText="Cerrar Sesión"
           sidebarIsOpen={isSidebarOpen}
         />

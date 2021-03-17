@@ -7,8 +7,7 @@ export const useStyles = makeStyles((theme) => ({
   sidebarWhenClosed: {
     width: 55,
   },
-  bottomDivider: {
-    marginTop: 16,
-    marginBottom: 16,
+  listItem: {
+    minHeight: "48px !important",
   },
 }));
