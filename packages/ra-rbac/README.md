@@ -52,6 +52,7 @@ export const createCanActivate = (permissions: Permission[]) => (resource: strin
 import React from 'react';
 import { Admin } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
+import { createCanActivate } from './createCanActivate';
 
 import { RbacProvider, RbacResource as Resource } from '@blackbox-vision/ra-rbac';
 
