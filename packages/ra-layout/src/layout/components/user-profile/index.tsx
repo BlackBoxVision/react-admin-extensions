@@ -16,32 +16,32 @@ export const UserProfile: React.FC<UserProfileProps> = () => {
   const styles = useStyles();
 
   if (!loading && !!user) {
-    const firstLetters = user.fullName
-      .split(" ")
+    const firstLetters = user?.fullName
+      ?.split(" ")
       .map((parts: any) => parts[0])
       .join("")
       .toUpperCase();
 
     return (
-      <Tooltip title={user.fullName} aria-label={user.fullName}>
+      <Tooltip title={user?.fullName} aria-label={user?.fullName}>
         <MenuItemLink
           leftIcon={
             <div className={styles.root}>
-              {!!user.avatar && (
+              {!!user && user.avatar && (
                 <Avatar
                   src={user.avatar}
                   alt={user.fullName}
                   className={styles.small}
                 />
               )}
-              {!user.avatar && (
-                <Avatar alt={user.fullName} className={styles.small}>
+              {(!user || (!!user && !user.avatar)) && (
+                <Avatar alt={user?.fullName} className={styles.small}>
                   {firstLetters}
                 </Avatar>
               )}
             </div>
           }
-          primaryText={user.fullName}
+          primaryText={user?.fullName}
           className={styles.menuLink}
           sidebarIsOpen
           to="/"
