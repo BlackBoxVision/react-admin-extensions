@@ -1,6 +1,6 @@
 {
   "name": "@blackbox-vision/ra-layout",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Custom layout for React Admin",
   "author": "JonatanSalas <jonatan.salas@blackbox-vision.tech>",
   "homepage": "https://github.com/BlackBoxVision/react-admin-extensions#readme",
@@ -22,6 +22,7 @@
     "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.13.8",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "@material-ui/core": "^4.11.3",

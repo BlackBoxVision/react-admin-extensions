@@ -10,6 +10,7 @@ import { useStyles } from "./styles";
 // TODO: improve typings
 export type UserProfileProps = {};
 
+// TODO: improve component
 export const UserProfile: React.FC<UserProfileProps> = () => {
   const { loading, identity: user } = useGetIdentity();
 

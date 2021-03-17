@@ -1,0 +1,37 @@
+{
+  "name": "storybook",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "JonatanSalas <jonatan.salas@blackbox-vision.tech>",
+  "homepage": "https://github.com/BlackBoxVision/react-admin-extensions#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://JonatanSalas:jonisaa123.0@github.com/BlackBoxVision/react-admin-extensions.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/BlackBoxVision/react-admin-extensions/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/runtime-corejs3": "^7.13.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.9.1",
+    "ra-data-json-server": "^3.13.4",
+    "react-admin": "^3.13.4"
+  },
+  "dependencies": {
+    "@blackbox-vision/ra-layout": "0.0.14",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
