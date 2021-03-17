@@ -55,7 +55,11 @@ export const NestedMenu: React.FC<NestedMenuProps> = ({ items = [] }) => {
     );
   };
 
-  return <div className={styles.list}>{items.map(renderItems)}</div>;
+  return (
+    <div id="menu" className={styles.list}>
+      {items.map(renderItems)}
+    </div>
+  );
 };
 
 NestedMenu.displayName = "NestedMenu";
