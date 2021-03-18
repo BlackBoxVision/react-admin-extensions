@@ -1,0 +1,99 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Layout } from "@blackbox-vision/ra-layout/pkg";
+
+import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import { Admin, Resource, ListGuesser } from "react-admin";
+
+import { items } from "../src/menu";
+
+import { authProvider } from "../src/authProvider";
+import { dataProvider } from "../src/dataProvider";
+
+<Meta title="UI-UX/RA Layout" component={Layout} />
+
+# RA Layout
+
+Revamped React Admin UI.
+
+## Install
+
+You can install this library via NPM or YARN.
+
+### NPM
+
+```bash
+npm i @blackbox-vision/ra-layout
+```
+
+### YARN
+
+```bash
+yarn add @blackbox-vision/ra-layout
+```
+
+## Use case
+
+You're tired of the defacto React Admin UI and want to renew the look and feel. 
+
+## Usage
+
+The usage is really simple:
+
+1. Define your menu as a JSON structure like the following:
+
+```typescript
+// menu.ts
+import {
+  LocalAtm,
+  PermContactCalendar,
+} from '@material-ui/icons';
+
+export const items = [{
+  type: 'group',
+  label: 'Architects',
+  items: [
+    {
+      type: 'resource',
+      name: 'architects',
+      label: 'Information',
+      icon: PermContactCalendar,
+    },
+    {
+      type: 'resource',
+      name: 'commissions',
+      label: 'Commissions',
+      icon: LocalAtm,
+    },
+  ],
+}]
+```
+
+2. Import `Layout` pass props to it and you're ready:
+
+```typescript
+// App.tsx
+import React from 'react';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+
+import { Layout } from '@blackbox-vision/ra-layout';
+
+import { items } from './menu';
+
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+
+export const App = () => {
+  return (
+    <Admin 
+      dataProvider={dataProvider}
+      layout={props => <Layout {...props} items={items} />}
+    >
+      <Resource name="users" list={ListGuesser} />
+    </Admin>
+  );
+};
+
+App.displayName = "App";
+```

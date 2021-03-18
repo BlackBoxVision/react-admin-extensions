@@ -30,7 +30,7 @@
     "react-admin": "^3.13.4"
   },
   "dependencies": {
-    "@blackbox-vision/ra-layout": "0.0.14",
+    "@blackbox-vision/ra-layout": "0.0.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
