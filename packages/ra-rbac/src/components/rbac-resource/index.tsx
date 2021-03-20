@@ -9,7 +9,7 @@ export const RbacResource: React.FC<ResourceProps> = ({
   edit,
   show,
   create,
-  ...resourceProps
+  ...rest
 }) => {
   const { loaded, canActivate } = useGetCanActivate();
 
@@ -19,7 +19,7 @@ export const RbacResource: React.FC<ResourceProps> = ({
 
   return (
     <Resource
-      {...resourceProps}
+      {...rest}
       create={canActivate(name, "create") && create}
       edit={canActivate(name, "edit") && edit}
       show={canActivate(name, "show") && show}

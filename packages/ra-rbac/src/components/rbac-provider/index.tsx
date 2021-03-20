@@ -1,24 +1,22 @@
 import React from "react";
 
-import { RbacContext, CreateCanActivateFunction } from "../../contexts/rbac";
+import { RbacContext, CanActivateFunction } from "../../contexts/rbac";
 
 export type RbacProviderProps = {
-  createCanActivate?: CreateCanActivateFunction;
+  canActivate?: CanActivateFunction;
 };
 
 export const RbacProvider: React.FC<RbacProviderProps> = ({
-  createCanActivate,
+  canActivate,
   children,
 }) => {
   return (
-    <RbacContext.Provider value={createCanActivate}>
-      {children}
-    </RbacContext.Provider>
+    <RbacContext.Provider value={canActivate}>{children}</RbacContext.Provider>
   );
 };
 
 RbacProvider.displayName = "RbacProvider";
 RbacProvider.defaultProps = {
   // This let's any route pass by setting canActivate return value to true
-  createCanActivate: (p) => (r, a, f) => true,
+  canActivate: (p, r, a, f) => true,
 };

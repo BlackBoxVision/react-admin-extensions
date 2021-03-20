@@ -1,4 +1,4 @@
-# RA RBAC [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT) 
+# RA RBAC [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Role based Access Control for `React Admin`.
 
@@ -26,41 +26,44 @@ You need to have fine grained permissions over your `React Admin` app.
 
 The usage is really simple:
 
-1. Define your `createCanActivate` function like the following:
+1. Define your `canActivate` function like the following:
 
 ```typescript
-// createCanActivate.ts
-import { Permission } from '@blackbox-vision/ra-rbac';
+// canActivate.ts
+import { Permission } from "@blackbox-vision/ra-rbac";
 
-// Your can activate logic
-export const createCanActivate = (permissions: Permission[]) => (resource: string, action: string, fields?: string[]) => {
-  if (Array.isArray(fields)) {
-    return fields.reduce((acc, field) => ({
-      ...acc,
-      [field]: true
-    }), {})
-  }
-
+export const canActivate = (
+  permissions: Permission[] | any,
+  resource: string,
+  action: string,
+  field?: string
+) => {
+  // Your can activate logic
   return true;
-}
+};
 ```
 
 2. Import `RbacProvider` and `RbacResource` and wrap your `React Admin` with it:
 
 ```typescript
 // App.tsx
-import React from 'react';
-import { Admin } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
-import { createCanActivate } from './createCanActivate';
+import React from "react";
+import { Admin } from "react-admin";
+import jsonServerProvider from "ra-data-json-server";
+import {
+  RbacProvider,
+  RbacResource as Resource,
+} from "@blackbox-vision/ra-rbac";
 
-import { RbacProvider, RbacResource as Resource } from '@blackbox-vision/ra-rbac';
-
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+import { canActivate } from "./canActivate";
 
 export const App = () => {
+  const dataProvider = jsonServerProvider(
+    "https://jsonplaceholder.typicode.com"
+  );
+
   return (
-    <RbacProvider createCanActivate={createCanActivate}>
+    <RbacProvider canActivate={canActivate}>
       <Admin dataProvider={dataProvider}>
         <Resource name="users" list={ListGuesser} />
       </Admin>
@@ -77,9 +80,9 @@ App.displayName = "App";
 
 `RbacProvider` has the following props:
 
-| Properties | Types   | Default Value | Description                                     |
-| ---------- | ------- | ------------- | ----------------------------------------------- |
-| createCanActivate      | Function   | () => () => true            | The menu items to render           |
+| Properties    | Types      | Default Value          | Description                                                                           |
+| ------------- | ---------- | ---------------------- | ------------------------------------------------------------------------------------- |
+| `canActivate` | `Function` | `(p, r, a, f) => true` | Logic to test if a user can perform an specific action or visualize an specific field |
 
 ### RbacResource
 

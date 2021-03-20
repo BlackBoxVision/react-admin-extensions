@@ -3,17 +3,20 @@ import React from "react";
 export type Permission = {
   resource: string;
   action: string;
-  fields: string[];
+  fields?: string[];
 };
 
 export type CanActivateFunction = (
+  permissions: Permission[] | any,
   resource: string,
   action: string,
-  fields?: string[]
-) => Boolean | any;
+  field?: string
+) => boolean;
 
-export type CreateCanActivateFunction = (
-  permissions: Permission[]
-) => CanActivateFunction;
+export type ReducedCanActivateFunction = (
+  resource: string,
+  action: string,
+  field?: string
+) => boolean;
 
-export const RbacContext = React.createContext<CreateCanActivateFunction>(null);
+export const RbacContext = React.createContext<CanActivateFunction>(null);

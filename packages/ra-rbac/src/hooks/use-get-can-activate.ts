@@ -1,20 +1,23 @@
+import { useContext } from "react";
 import { usePermissions } from "react-admin";
-import { useContext, useEffect, useState } from "react";
 
-import { CanActivateFunction, RbacContext } from "../contexts/rbac";
+import { RbacContext, ReducedCanActivateFunction } from "../contexts/rbac";
 
 export type UseGetCanActivateReturn = {
-  canActivate: CanActivateFunction | null;
+  canActivate: ReducedCanActivateFunction | null;
   loaded: boolean;
 };
 
 export const useGetCanActivate = (): UseGetCanActivateReturn => {
-  const createCanActivate = useContext(RbacContext);
+  const canActivate = useContext(RbacContext);
 
   const { loaded, permissions } = usePermissions();
 
   return {
-    canActivate: !!permissions ? createCanActivate(permissions) : null,
+    canActivate: !!permissions
+      ? (resource: string, action: string, field?: string) =>
+          canActivate(permissions, resource, action, field)
+      : null,
     loaded: loaded && !!permissions,
   };
 };
