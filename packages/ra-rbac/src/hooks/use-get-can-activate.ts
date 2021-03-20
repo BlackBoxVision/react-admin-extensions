@@ -10,20 +10,11 @@ export type UseGetCanActivateReturn = {
 
 export const useGetCanActivate = (): UseGetCanActivateReturn => {
   const createCanActivate = useContext(RbacContext);
-  const [canActivate, setCanActivate] = useState<CanActivateFunction | null>(
-    null
-  );
 
-  const { permissions, loaded } = usePermissions();
-
-  useEffect(() => {
-    if (loaded) {
-      setCanActivate(createCanActivate(permissions));
-    }
-  }, [permissions, loaded]);
+  const { loaded, permissions } = usePermissions();
 
   return {
-    canActivate,
-    loaded,
+    canActivate: !!permissions ? createCanActivate(permissions) : null,
+    loaded: loaded && !!permissions,
   };
 };

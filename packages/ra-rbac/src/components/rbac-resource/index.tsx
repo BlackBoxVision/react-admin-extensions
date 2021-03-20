@@ -9,21 +9,21 @@ export const RbacResource: React.FC<ResourceProps> = ({
   edit,
   show,
   create,
-  options,
+  ...resourceProps
 }) => {
-  const { canActivate, loaded } = useGetCanActivate();
+  const { loaded, canActivate } = useGetCanActivate();
 
-  if (!loaded) {
+  if (!loaded && !canActivate) {
     return null;
   }
 
   return (
     <Resource
+      {...resourceProps}
       create={canActivate(name, "create") && create}
       edit={canActivate(name, "edit") && edit}
       show={canActivate(name, "show") && show}
       list={canActivate(name, "list") && list}
-      options={options}
       name={name}
     />
   );
