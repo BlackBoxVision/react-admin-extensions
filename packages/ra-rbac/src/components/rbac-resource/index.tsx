@@ -1,9 +1,16 @@
 import React from "react";
-import { Resource } from "react-admin";
+import { Resource, ResourceProps } from "react-admin";
 
 import { useGetCanActivate } from "../../hooks/use-get-can-activate";
 
-export const RbacResource = ({ name, list, edit, show, create, options }) => {
+export const RbacResource: React.FC<ResourceProps> = ({
+  name,
+  list,
+  edit,
+  show,
+  create,
+  options,
+}) => {
   const { canActivate, loaded } = useGetCanActivate();
 
   if (!loaded) {

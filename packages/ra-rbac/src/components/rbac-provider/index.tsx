@@ -3,7 +3,7 @@ import React from "react";
 import { RbacContext, CreateCanActivateFunction } from "../../contexts/rbac";
 
 export type RbacProviderProps = {
-  createCanActivate: CreateCanActivateFunction;
+  createCanActivate?: CreateCanActivateFunction;
 };
 
 export const RbacProvider: React.FC<RbacProviderProps> = ({
