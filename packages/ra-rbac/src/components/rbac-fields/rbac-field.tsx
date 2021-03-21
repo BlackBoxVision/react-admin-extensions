@@ -1,12 +1,11 @@
 import React from "react";
-import { FieldProps } from "react-admin";
 
 import { useIsListOrShow } from "../../hooks/use-is-list-or-show";
 import { useGetCanActivate } from "../../hooks/use-get-can-activate";
 
-export type FieldComponent = React.FC<FieldProps>;
-export type RbacFieldProps = FieldProps & {
-  component: FieldComponent;
+export type RbacFieldProps = {
+  component: any;
+  [key: string]: any;
 };
 
 export const RbacField: React.FC<RbacFieldProps> = ({

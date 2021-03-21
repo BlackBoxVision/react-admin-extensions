@@ -1,18 +1,15 @@
 import React from "react";
-import { InputProps } from "react-admin";
 
 import { useIsCreateOrEdit } from "../../hooks/use-is-create-or-edit";
 import { useGetCanActivate } from "../../hooks/use-get-can-activate";
 
-export type InputComponent<T> = React.FC<T>;
-export type RbacInputProps<T> = {
-  component: InputComponent<T>;
-  resource?: string;
-  source?: string;
+export type RbacInputProps = {
+  component: any;
   [key: string]: any;
 };
 
-export const RbacInput: React.FC<RbacInputProps<any>> = ({
+// TODO: review how to type this component
+export const RbacInput: React.FC<RbacInputProps> = ({
   component: Input,
   resource,
   source,
