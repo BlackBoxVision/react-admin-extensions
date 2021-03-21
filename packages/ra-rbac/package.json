@@ -1,7 +1,7 @@
 {
   "name": "@blackbox-vision/ra-rbac",
   "version": "0.1.0",
-  "description": "> TODO: description",
+  "description": "RBAC support for React Admin",
   "author": "JonatanSalas <jonatan.salas@blackbox-vision.tech>",
   "homepage": "https://github.com/BlackBoxVision/react-admin-extensions#readme",
   "license": "MIT",
