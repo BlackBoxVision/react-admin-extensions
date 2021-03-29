@@ -1,7 +1,7 @@
 {
   "name": "@blackbox-vision/ra-language-spanish",
-  "version": "0.0.0",
-  "description": "> TODO: description",
+  "version": "3.12.1",
+  "description": "Spanish messages for react-admin, the frontend framework for building admin applications on top of REST/GraphQL services",
   "author": "JonatanSalas <jonatan.salas@blackbox-vision.tech>",
   "homepage": "https://github.com/BlackBoxVision/react-admin-extensions#readme",
   "license": "MIT",
@@ -25,12 +25,14 @@
     "@pika/plugin-build-web": "^0.9.2",
     "@pika/plugin-standard-pkg": "^0.9.2",
     "@types/react": "^16.9.48",
+    "ra-core": "^3.14.0",
     "react": "^16.13.1",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   },
   "peerDependencies": {
-    "react": "^16.11.0"
+    "react": "^16.11.0",
+    "ra-core": "^3.14.0"
   },
   "@pika/pack": {
     "pipeline": [
