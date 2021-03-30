@@ -1,5 +1,9 @@
 import React from "react";
-import { ResourceContextProvider, ListContextProvider } from "react-admin";
+import {
+  ResourceContextProvider,
+  ListContextProvider,
+  useRecordContext,
+} from "react-admin";
 
 import { useReferenceManyToManyFieldController } from "../../hooks/use-reference-many-to-many-field-controller";
 
@@ -26,9 +30,9 @@ export const ReferenceManyToManyField: React.FC<ReferenceManyToManyFieldProps> =
   props
 ) => {
   const {
+    target,
     basePath,
     resource,
-    record,
     reference,
     through,
     using,
@@ -40,9 +44,18 @@ export const ReferenceManyToManyField: React.FC<ReferenceManyToManyFieldProps> =
     children,
   } = props;
 
+  const record = useRecordContext(props);
+
+  if (React.Children.count(children) !== 1) {
+    throw new Error(
+      "<ReferenceManyToManyField> only accepts a single child (like <Datagrid>)"
+    );
+  }
+
   const controllerProps: any = useReferenceManyToManyFieldController({
     basePath,
     filter,
+    target,
     page,
     perPage,
     record,
@@ -53,12 +66,6 @@ export const ReferenceManyToManyField: React.FC<ReferenceManyToManyFieldProps> =
     through,
     using,
   });
-
-  if (React.Children.count(children) !== 1) {
-    throw new Error(
-      "<ReferenceManyToManyField> only accepts a single child (like <Datagrid>)"
-    );
-  }
 
   return (
     <ResourceContextProvider value={reference}>
@@ -71,6 +78,7 @@ export const ReferenceManyToManyField: React.FC<ReferenceManyToManyFieldProps> =
 
 ReferenceManyToManyField.displayName = "ManyToManyReferenceField";
 ReferenceManyToManyField.defaultProps = {
+  source: "id",
   page: 1,
   perPage: 25,
 };

@@ -45,5 +45,9 @@
         "@pika/plugin-build-types"
       ]
     ]
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "lodash.isequal": "^4.5.0"
   }
 }
