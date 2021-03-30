@@ -30,6 +30,7 @@ We've packages to support different needs.
 ### Realtime
 
 - [**RA Realtime (WIP)**](https://github.com/BlackBoxVision/react-admin-extensions/tree/main/packages/ra-realtime): Add support for realtime data.
+- [**RA Messaging (WIP)**](https://github.com/BlackBoxVision/react-admin-extensions/tree/main/packages/ra-messaging): Add support for an internal chat in your app.
 - [**RA Notifications (WIP)**](https://github.com/BlackBoxVision/react-admin-extensions/tree/main/packages/ra-notifications): Add support for push notifications. 
 
 ### Input/Fields
