@@ -31,7 +31,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
           drawerPaper: clsx({
             [styles.sidebarWhenOpen]: !!isSidebarOpen,
             [styles.sidebarWhenClosed]: !isSidebarOpen,
-            [layoutStyles.sidebar]: !!layoutStyles.sidebar,
+            [layoutStyles.sidebarWhenOpen]: !!layoutStyles.sidebarWhenOpen,
+            [layoutStyles.sidebarWhenClosed]: !!layoutStyles.sidebarWhenClosed,
           }),
         } as any
       }
@@ -39,6 +40,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
         className: clsx({
           [styles.sidebarWhenOpen]: !!isSidebarOpen,
           [styles.sidebarWhenClosed]: !isSidebarOpen,
+          [layoutStyles.sidebarWhenOpen]: !!layoutStyles.sidebarWhenOpen,
+          [layoutStyles.sidebarWhenClosed]: !!layoutStyles.sidebarWhenClosed,
         }),
         elevation: 2,
       }}

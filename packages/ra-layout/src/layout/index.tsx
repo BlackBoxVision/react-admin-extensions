@@ -23,9 +23,13 @@ export type LayoutStylesProps = {
    */
   appBar?: any;
   /**
-   * Styles applied to sidebar
+   * Styles applied to sidebar when is open
    */
-  sidebar?: any;
+   sidebarWhenOpen?: any;
+  /**
+   * Styles applied to sidebar when is closed
+   */
+   sidebarWhenClosed?: any;
   /**
    * Styles applied to menu list items
    */
@@ -104,6 +108,8 @@ Layout.defaultProps = {
     root: {},
     container: {},
     appBar: {},
+    sidebarWhenOpen: {},
+    sidebarWhenClosed: {},
     listItem: {},
   }
 };

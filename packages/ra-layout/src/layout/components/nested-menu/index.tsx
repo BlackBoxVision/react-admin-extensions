@@ -14,10 +14,11 @@ import { useStyles } from "./styles";
 export type NestedMenuProps = {
   items: any[];
   layoutStyles: any;
+  iconStyle: any;
 };
 
 export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
-  ({ items = [], layoutStyles }) => {
+  ({ items = [], layoutStyles, iconStyle }) => {
     const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
 
     const styles = useStyles();
@@ -48,7 +49,13 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
             }}
             primaryText={label || name}
             sidebarIsOpen={isSidebarOpen}
-            leftIcon={Icon ? <Icon /> : <DefaultIcon />}
+            leftIcon={
+              Icon ? (
+                <Icon style={iconStyle} />
+              ) : (
+                <DefaultIcon style={iconStyle} />
+              )
+            }
           />
         );
       },

@@ -4,10 +4,19 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "green",
+    backgroundColor: "lightgreen",
   },
   container: {
-    backgroundColor: "yellow",
+    backgroundColor: "lightyellow",
+  },
+  appBar: {
+    backgroundColor: "lightblue",
+  },
+  sidebarWhenClosed: {
+    backgroundColor: "violet",
+  },
+  sidebarWhenOpen: {
+    backgroundColor: "violet",
   },
 });
 
@@ -17,7 +26,13 @@ const MyLayout = (props) => {
   return (
     <Layout
       {...props}
-      layoutStyles={{ root: classes.root, container: classes.container }}
+      layoutStyles={{
+        root: classes.root,
+        container: classes.container,
+        appBar: classes.appBar,
+        sidebarWhenClosed: classes.sidebarWhenClosed,
+        sidebarWhenOpen: classes.sidebarWhenOpen,
+      }}
     />
   );
 };
