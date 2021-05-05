@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf pkg",
     "build": "npm run clean && pika build",
-    "publish": "pika publish",
+    "publish": "pika publish --any-branch",
     "version": "npm run build"
   },
   "bugs": {
