@@ -31,6 +31,8 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
               key={`Menu.${type}.${label}`}
               label={label || name}
               isSidebarOpen={isSidebarOpen}
+              layoutStyles={layoutStyles}
+              iconStyle={iconStyle}
             >
               {subItems.map(renderItems)}
             </CollapsibleMenu>

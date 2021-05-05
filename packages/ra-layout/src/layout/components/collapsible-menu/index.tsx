@@ -16,12 +16,15 @@ export type CollapsibleMenuProps = {
   label: string;
   isSidebarOpen: boolean;
   children: React.ReactElement[];
+  layoutStyles: any;
 };
 
 export const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
   isSidebarOpen,
   children,
   label,
+  layoutStyles,
+  iconStyle,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,13 +47,17 @@ export const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
       <MenuItemContainer>
         <MenuItem
           button
-          className={styles.listItem}
+          className={clsx(styles.listItem, layoutStyles.listItem)}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <ListItemIcon className={styles.icon}>
+          <ListItemIcon style={iconStyle} className={styles.icon}>
             {isOpen ? <ExpandMore /> : <ChevronRight />}
           </ListItemIcon>
-          <Typography variant="inherit" color="textSecondary">
+          <Typography
+            variant="inherit"
+            color="textSecondary"
+            className={layoutStyles.listItem}
+          >
             {label}
           </Typography>
         </MenuItem>
