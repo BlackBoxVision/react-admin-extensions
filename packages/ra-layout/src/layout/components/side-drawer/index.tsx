@@ -12,12 +12,14 @@ import { useStyles } from "./styles";
 export type SideDrawerProps = {
   UserProfile: any;
   layoutStyles: any;
+  iconStyle: any;
 };
 
 export const SideDrawer: React.FC<SideDrawerProps> = ({
   children,
   UserProfile,
   layoutStyles,
+  iconStyle
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
@@ -55,8 +57,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
           id="logout"
           to="/login"
           onClick={logout}
-          leftIcon={<LogoutIcon />}
-          className={styles.listItem}
+          leftIcon={<LogoutIcon style={iconStyle} />}
+          className={clsx(styles.listItem, layoutStyles.listItem)}
           primaryText="Cerrar Sesión"
           sidebarIsOpen={isSidebarOpen}
         />

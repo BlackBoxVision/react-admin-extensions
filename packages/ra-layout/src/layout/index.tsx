@@ -25,15 +25,15 @@ export type LayoutStylesProps = {
   /**
    * Styles applied to sidebar when is open
    */
-   sidebarWhenOpen?: any;
+  sidebarWhenOpen?: any;
   /**
    * Styles applied to sidebar when is closed
    */
-   sidebarWhenClosed?: any;
+  sidebarWhenClosed?: any;
   /**
    * Styles applied to menu list items
    */
-   listItem?: any;
+  listItem?: any;
 };
 
 // TODO: improve typings
@@ -45,6 +45,7 @@ export type LayoutProps = {
   title?: string;
   dashboard?: any;
   layoutStyles?: LayoutStylesProps;
+  iconStyle?: any;
 };
 
 export const Layout: React.FC<LayoutProps> = ({
@@ -56,6 +57,7 @@ export const Layout: React.FC<LayoutProps> = ({
   Menu = NestedMenu,
   Sidebar = SideDrawer,
   layoutStyles,
+  iconStyle,
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const dispatch = useDispatch();
@@ -78,12 +80,17 @@ export const Layout: React.FC<LayoutProps> = ({
             [styles.appBar]: true,
             [styles.appBarWhenSidebarOpen]: !!isSidebarOpen,
             [styles.appBarWhenSidebarClosed]: !isSidebarOpen,
-            [layoutStyles.appBar]: !!layoutStyles.appBar
+            [layoutStyles.appBar]: !!layoutStyles.appBar,
           })}
         />
         <main className={styles.contentWithSidebar}>
-          <Sidebar layoutStyles={layoutStyles}>
-            <Menu items={items} dashboard={dashboard} layoutStyles={layoutStyles} />
+          <Sidebar layoutStyles={layoutStyles} iconStyle={iconStyle}>
+            <Menu
+              items={items}
+              dashboard={dashboard}
+              layoutStyles={layoutStyles}
+              iconStyle={iconStyle}
+            />
           </Sidebar>
           <div
             className={clsx({
@@ -111,5 +118,5 @@ Layout.defaultProps = {
     sidebarWhenOpen: {},
     sidebarWhenClosed: {},
     listItem: {},
-  }
+  },
 };

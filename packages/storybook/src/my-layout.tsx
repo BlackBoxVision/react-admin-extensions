@@ -18,6 +18,9 @@ const useStyles = makeStyles({
   sidebarWhenOpen: {
     backgroundColor: "violet",
   },
+  listItem: {
+    color: '#FFF'
+  }
 });
 
 const MyLayout = (props) => {
@@ -26,12 +29,14 @@ const MyLayout = (props) => {
   return (
     <Layout
       {...props}
+      iconStyle={{ color: '#FFF' }}
       layoutStyles={{
         root: classes.root,
         container: classes.container,
         appBar: classes.appBar,
         sidebarWhenClosed: classes.sidebarWhenClosed,
         sidebarWhenOpen: classes.sidebarWhenOpen,
+        listItem: classes.listItem,
       }}
     />
   );
