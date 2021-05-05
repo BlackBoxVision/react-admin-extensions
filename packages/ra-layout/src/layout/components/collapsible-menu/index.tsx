@@ -17,6 +17,7 @@ export type CollapsibleMenuProps = {
   isSidebarOpen: boolean;
   children: React.ReactElement[];
   layoutStyles: any;
+  iconStyle: any;
 };
 
 export const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({
