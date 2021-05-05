@@ -9,6 +9,11 @@ import { NestedMenu } from "./components/nested-menu";
 
 import { useStyles } from "./styles";
 
+export type LayoutStylesProps = {
+  root?: object;
+  container?: object;
+};
+
 // TODO: improve typings
 export type LayoutProps = {
   Menu?: any;
@@ -17,6 +22,7 @@ export type LayoutProps = {
   items: any[];
   title?: string;
   dashboard?: any;
+  layoutStyles?: LayoutStylesProps;
 };
 
 export const Layout: React.FC<LayoutProps> = ({
@@ -27,6 +33,7 @@ export const Layout: React.FC<LayoutProps> = ({
   AppBar = Header,
   Menu = NestedMenu,
   Sidebar = SideDrawer,
+  layoutStyles,
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const dispatch = useDispatch();
@@ -40,8 +47,8 @@ export const Layout: React.FC<LayoutProps> = ({
   }, [setSidebarVisibility]);
 
   return (
-    <div className={styles.root}>
-      <div className={styles.container}>
+    <div className={clsx(styles.root, layoutStyles.root)}>
+      <div className={clsx(styles.container, layoutStyles.container)}>
         <AppBar
           title={title}
           open={isSidebarOpen}
@@ -72,3 +79,10 @@ export const Layout: React.FC<LayoutProps> = ({
 };
 
 Layout.displayName = "Layout";
+
+Layout.defaultProps = {
+  layoutStyles: {
+    root: {},
+    container: {},
+  }
+};

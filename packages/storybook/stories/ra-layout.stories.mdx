@@ -1,15 +1,13 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-
-import { Layout } from "@blackbox-vision/ra-layout/pkg";
-
+import { Layout } from "@blackbox-vision/ra-layout";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { Admin, Resource, ListGuesser } from "react-admin";
 
 import { items } from "../src/menu";
-
 import { authProvider } from "../src/authProvider";
 import { dataProvider } from "../src/dataProvider";
+import { theme } from "../src/theme";
 
 <Meta title="UI-UX/RA Layout" component={Layout} />
 
@@ -97,3 +95,14 @@ export const App = () => {
 
 App.displayName = "App";
 ```
+
+<Story name="layout">
+  <ThemeProvider theme={theme}>
+    <Admin 
+      dataProvider={dataProvider}
+      layout={props => <Layout items={items} layoutStyles={{ root: { backgroundColor: 'green' } }} />}
+      >
+      <Resource name="users" list={ListGuesser} />
+    </Admin>
+  </ThemeProvider>
+</Story>

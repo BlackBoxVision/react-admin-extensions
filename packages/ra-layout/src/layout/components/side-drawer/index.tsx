@@ -6,12 +6,14 @@ import { Sidebar, MenuItemLink, useLogout } from "react-admin";
 
 import LogoutIcon from "@material-ui/icons/PowerSettingsNewOutlined";
 
+import { UserProfile as DefaultUserProfile } from "../user-profile";
 import { useStyles } from "./styles";
-import { UserProfile } from "../user-profile";
 
-export type SideDrawerProps = {};
+export type SideDrawerProps = {
+  UserProfile: any
+};
 
-export const SideDrawer: React.FC<SideDrawerProps> = ({ children }) => {
+export const SideDrawer: React.FC<SideDrawerProps> = ({ children, UserProfile }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
 
@@ -56,4 +58,6 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ children }) => {
 
 SideDrawer.displayName = "SideDrawer";
 
-SideDrawer.defaultProps = {};
+SideDrawer.defaultProps = {
+  UserProfile: DefaultUserProfile
+};
