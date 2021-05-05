@@ -10,10 +10,15 @@ import { UserProfile as DefaultUserProfile } from "../user-profile";
 import { useStyles } from "./styles";
 
 export type SideDrawerProps = {
-  UserProfile: any
+  UserProfile: any;
+  layoutStyles: any;
 };
 
-export const SideDrawer: React.FC<SideDrawerProps> = ({ children, UserProfile }) => {
+export const SideDrawer: React.FC<SideDrawerProps> = ({
+  children,
+  UserProfile,
+  layoutStyles,
+}) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
 
@@ -26,6 +31,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ children, UserProfile })
           drawerPaper: clsx({
             [styles.sidebarWhenOpen]: !!isSidebarOpen,
             [styles.sidebarWhenClosed]: !isSidebarOpen,
+            [layoutStyles.sidebar]: !!layoutStyles.sidebar,
           }),
         } as any
       }
@@ -59,5 +65,5 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ children, UserProfile })
 SideDrawer.displayName = "SideDrawer";
 
 SideDrawer.defaultProps = {
-  UserProfile: DefaultUserProfile
+  UserProfile: DefaultUserProfile,
 };

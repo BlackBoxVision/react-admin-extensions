@@ -10,8 +10,26 @@ import { NestedMenu } from "./components/nested-menu";
 import { useStyles } from "./styles";
 
 export type LayoutStylesProps = {
-  root?: object;
-  container?: object;
+  /**
+   * Styles applied to root container
+   */
+  root?: any;
+  /**
+   * Styles applied to second container
+   */
+  container?: any;
+  /**
+   * Styles applied to appBar
+   */
+  appBar?: any;
+  /**
+   * Styles applied to sidebar
+   */
+  sidebar?: any;
+  /**
+   * Styles applied to menu list items
+   */
+   listItem?: any;
 };
 
 // TODO: improve typings
@@ -56,11 +74,12 @@ export const Layout: React.FC<LayoutProps> = ({
             [styles.appBar]: true,
             [styles.appBarWhenSidebarOpen]: !!isSidebarOpen,
             [styles.appBarWhenSidebarClosed]: !isSidebarOpen,
+            [layoutStyles.appBar]: !!layoutStyles.appBar
           })}
         />
         <main className={styles.contentWithSidebar}>
-          <Sidebar>
-            <Menu items={items} dashboard={dashboard} />
+          <Sidebar layoutStyles={layoutStyles}>
+            <Menu items={items} dashboard={dashboard} layoutStyles={layoutStyles} />
           </Sidebar>
           <div
             className={clsx({
@@ -84,5 +103,7 @@ Layout.defaultProps = {
   layoutStyles: {
     root: {},
     container: {},
+    appBar: {},
+    listItem: {},
   }
 };

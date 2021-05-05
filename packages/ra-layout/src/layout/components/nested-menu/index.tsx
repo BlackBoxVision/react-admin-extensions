@@ -1,4 +1,5 @@
 import qs from "qs";
+import clsx from "clsx";
 import React, { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { MenuItemLink } from "react-admin";
@@ -12,10 +13,11 @@ import { useStyles } from "./styles";
 // TODO: improve typings
 export type NestedMenuProps = {
   items: any[];
+  layoutStyles: any;
 };
 
 export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
-  ({ items = [] }) => {
+  ({ items = [], layoutStyles }) => {
     const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
 
     const styles = useStyles();
@@ -36,7 +38,7 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
 
         return (
           <MenuItemLink
-            className={styles.listItem}
+            className={clsx(styles.listItem, layoutStyles.listItem)}
             key={`Item.${type}.${label}`}
             to={{
               pathname: `/${name}`,
