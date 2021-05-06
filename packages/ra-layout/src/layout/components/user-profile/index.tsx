@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -8,10 +9,12 @@ import PersonOutlined from "@material-ui/icons/PersonOutlined";
 import { useStyles } from "./styles";
 
 // TODO: improve typings
-export type UserProfileProps = {};
+export type UserProfileProps = {
+  layoutStyles?: any;
+};
 
 // TODO: improve component
-export const UserProfile: React.FC<UserProfileProps> = () => {
+export const UserProfile: React.FC<UserProfileProps> = ({ layoutStyles }) => {
   const { loading, identity: user } = useGetIdentity();
 
   const styles = useStyles();
@@ -43,9 +46,9 @@ export const UserProfile: React.FC<UserProfileProps> = () => {
             </div>
           }
           primaryText={user?.fullName}
-          className={styles.menuLink}
-          sidebarIsOpen
+          className={clsx(styles.menuLink, layoutStyles.menuLink)}
           to="/"
+          sidebarIsOpen
         />
       </Tooltip>
     );
@@ -54,10 +57,10 @@ export const UserProfile: React.FC<UserProfileProps> = () => {
   return (
     <MenuItemLink
       to="/"
-      sidebarIsOpen
       primaryText="Cargando..."
-      className={styles.menuLink}
+      className={clsx(styles.menuLink, layoutStyles.menuLink)}
       leftIcon={<PersonOutlined />}
+      sidebarIsOpen
     />
   );
 };

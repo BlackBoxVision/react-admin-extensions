@@ -19,7 +19,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
   children,
   UserProfile,
   layoutStyles,
-  iconStyle
+  iconStyle,
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
@@ -49,7 +49,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
       }}
     >
       <>
-        <UserProfile />
+        <UserProfile layoutStyles={layoutStyles} />
         <Divider />
         {children}
         <Divider />

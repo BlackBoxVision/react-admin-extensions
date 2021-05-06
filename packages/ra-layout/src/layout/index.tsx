@@ -34,6 +34,10 @@ export type LayoutStylesProps = {
    * Styles applied to menu list items
    */
   listItem?: any;
+  /**
+   * Styles applied to user profile menu link
+   */
+   menuLink?: any;
 };
 
 // TODO: improve typings
@@ -118,5 +122,6 @@ Layout.defaultProps = {
     sidebarWhenOpen: {},
     sidebarWhenClosed: {},
     listItem: {},
+    menuLink: {},
   },
 };

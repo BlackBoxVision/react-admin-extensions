@@ -75,23 +75,23 @@ export const items = [{
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
-
 import { Layout } from '@blackbox-vision/ra-layout';
 
+import { authProvider } from "providers/authProvider";
+import { dataProvider } from "providers/dataProvider";
 import { items } from './menu';
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
-export const App = () => {
-  return (
-    <Admin 
-      dataProvider={dataProvider}
-      layout={props => <Layout {...props} items={items} />}
-    >
-      <Resource name="users" list={ListGuesser} />
-    </Admin>
-  );
-};
+export const App = () => (
+  <Admin 
+    dataProvider={dataProvider}
+    authProvider={authProvider}
+    layout={props => <Layout {...props} items={items} />}
+  >
+    <Resource name="users" list={ListGuesser} />
+  </Admin>
+);
 
 App.displayName = "App";
 ```
@@ -100,6 +100,7 @@ App.displayName = "App";
   <ThemeProvider theme={theme}>
     <Admin 
       dataProvider={dataProvider}
+      authProvider={authProvider}
       layout={props => <Layout items={items} />}
       >
       <Resource name="users" list={ListGuesser} />
