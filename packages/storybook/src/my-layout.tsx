@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   },
   listItem: {
     color: '#FFF'
+  },
+  menuLink: {
+    color: '#FFF'
   }
 });
 
@@ -37,6 +40,7 @@ const MyLayout = (props) => {
         sidebarWhenClosed: classes.sidebarWhenClosed,
         sidebarWhenOpen: classes.sidebarWhenOpen,
         listItem: classes.listItem,
+        menuLink: classes.menuLink,
       }}
     />
   );
