@@ -36,10 +36,4 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     padding: theme.spacing(3),
   },
-  contentWhenSidebarOpen: {
-    paddingLeft: "calc(240px + 24px)",
-  },
-  contentWhenSidebarClosed: {
-    paddingLeft: "calc(55px + 24px)",
-  },
 }));

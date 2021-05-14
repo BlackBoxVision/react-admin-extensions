@@ -112,8 +112,6 @@ export const Layout: React.FC<LayoutProps> = ({
           <div
             className={clsx({
               [styles.content]: true,
-              [styles.contentWhenSidebarOpen]: !!isSidebarOpen,
-              [styles.contentWhenSidebarClosed]: !isSidebarOpen,
             })}
           >
             {children}
