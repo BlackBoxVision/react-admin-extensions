@@ -58,7 +58,11 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
           to="/login"
           onClick={logout}
           leftIcon={<LogoutIcon style={iconStyle} />}
-          className={clsx(styles.listItem, layoutStyles.listItem)}
+          className={clsx(
+            styles.listItem,
+            layoutStyles.listItem,
+            layoutStyles.logoutBtn
+          )}
           primaryText="Cerrar Sesión"
           sidebarIsOpen={isSidebarOpen}
         />

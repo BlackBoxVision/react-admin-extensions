@@ -37,7 +37,11 @@ export type LayoutStylesProps = {
   /**
    * Styles applied to user profile menu link
    */
-   menuLink?: any;
+  menuLink?: any;
+  /**
+   * Styles applied to logout btn
+   */
+  logoutBtn?: any;
 };
 
 // TODO: improve typings
@@ -123,5 +127,6 @@ Layout.defaultProps = {
     sidebarWhenClosed: {},
     listItem: {},
     menuLink: {},
+    logoutBtn: {},
   },
 };
