@@ -46,6 +46,9 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
         } as any
       }
       PaperProps={{
+        style: isSidebarOpen
+          ? { width: sidebarOpenWidth }
+          : { width: sidebarClosedWidth },
         className: clsx({
           [layoutStyles.sidebarWhenOpen]: !!layoutStyles.sidebarWhenOpen,
           [layoutStyles.sidebarWhenClosed]: !!layoutStyles.sidebarWhenClosed,
