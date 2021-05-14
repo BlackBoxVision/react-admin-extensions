@@ -39,9 +39,9 @@ export type LayoutStylesProps = {
    */
   menuLink?: any;
   /**
-   * Styles applied to logout btn
+   * Styles applied to logout button
    */
-  logoutBtn?: any;
+  logoutButton?: any;
 };
 
 // TODO: improve typings
@@ -54,6 +54,8 @@ export type LayoutProps = {
   dashboard?: any;
   layoutStyles?: LayoutStylesProps;
   iconStyle?: any;
+  sidebarOpenWidth?: number;
+  sidebarClosedWidth?: number;
 };
 
 export const Layout: React.FC<LayoutProps> = ({
@@ -66,6 +68,8 @@ export const Layout: React.FC<LayoutProps> = ({
   Sidebar = SideDrawer,
   layoutStyles,
   iconStyle,
+  sidebarOpenWidth,
+  sidebarClosedWidth,
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const dispatch = useDispatch();
@@ -92,7 +96,12 @@ export const Layout: React.FC<LayoutProps> = ({
           })}
         />
         <main className={styles.contentWithSidebar}>
-          <Sidebar layoutStyles={layoutStyles} iconStyle={iconStyle}>
+          <Sidebar
+            sidebarOpenWidth={sidebarOpenWidth}
+            sidebarClosedWidth={sidebarClosedWidth}
+            layoutStyles={layoutStyles}
+            iconStyle={iconStyle}
+          >
             <Menu
               items={items}
               dashboard={dashboard}
@@ -119,6 +128,8 @@ export const Layout: React.FC<LayoutProps> = ({
 Layout.displayName = "Layout";
 
 Layout.defaultProps = {
+  sidebarOpenWidth: 240,
+  sidebarClosedWidth: 55,
   layoutStyles: {
     root: {},
     container: {},
@@ -127,6 +138,6 @@ Layout.defaultProps = {
     sidebarWhenClosed: {},
     listItem: {},
     menuLink: {},
-    logoutBtn: {},
+    logoutButton: {},
   },
 };

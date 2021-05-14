@@ -13,6 +13,8 @@ export type SideDrawerProps = {
   UserProfile: any;
   layoutStyles: any;
   iconStyle: any;
+  sidebarOpenWidth: number;
+  sidebarClosedWidth: number;
 };
 
 export const SideDrawer: React.FC<SideDrawerProps> = ({
@@ -20,6 +22,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
   UserProfile,
   layoutStyles,
   iconStyle,
+  sidebarOpenWidth,
+  sidebarClosedWidth,
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
@@ -28,11 +32,14 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
 
   return (
     <Sidebar
+      style={
+        isSidebarOpen
+          ? { width: sidebarOpenWidth }
+          : { width: sidebarClosedWidth }
+      }
       classes={
         {
           drawerPaper: clsx({
-            [styles.sidebarWhenOpen]: !!isSidebarOpen,
-            [styles.sidebarWhenClosed]: !isSidebarOpen,
             [layoutStyles.sidebarWhenOpen]: !!layoutStyles.sidebarWhenOpen,
             [layoutStyles.sidebarWhenClosed]: !!layoutStyles.sidebarWhenClosed,
           }),
@@ -40,8 +47,6 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
       }
       PaperProps={{
         className: clsx({
-          [styles.sidebarWhenOpen]: !!isSidebarOpen,
-          [styles.sidebarWhenClosed]: !isSidebarOpen,
           [layoutStyles.sidebarWhenOpen]: !!layoutStyles.sidebarWhenOpen,
           [layoutStyles.sidebarWhenClosed]: !!layoutStyles.sidebarWhenClosed,
         }),
@@ -61,7 +66,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
           className={clsx(
             styles.listItem,
             layoutStyles.listItem,
-            layoutStyles.logoutBtn
+            layoutStyles.logoutButton
           )}
           primaryText="Cerrar Sesión"
           sidebarIsOpen={isSidebarOpen}
