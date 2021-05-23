@@ -1,6 +1,7 @@
+import { Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme: Theme) => ({
   icon: {
     minWidth: theme.spacing(5),
   },
@@ -9,14 +10,18 @@ export const useStyles = makeStyles((theme) => ({
   },
   listWhenSidebarOpen: {
     "& a": {
-      paddingLeft: theme.spacing(4),
-      transition: "padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+      [theme.breakpoints.up("xs")]: {
+        paddingLeft: theme.spacing(4),
+        transition: "padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+      },
     },
   },
   listWhenSidebarClosed: {
     "& a": {
-      paddingLeft: theme.spacing(2),
-      transition: "padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+      [theme.breakpoints.up("xs")]: {
+        paddingLeft: theme.spacing(2),
+        transition: "padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+      },
     },
   },
 }));

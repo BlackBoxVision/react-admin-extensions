@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     overflowX: "auto",
     flexDirection: "column",
-    height: "calc(100vh - 56px)",
+    height: "100vh",
   },
   appBar: {
     height: 56,
