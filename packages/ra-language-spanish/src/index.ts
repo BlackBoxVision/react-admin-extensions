@@ -15,6 +15,7 @@ const spanishMessages: TranslationMessages = {
       close_menu: "Cerrar menú",
       confirm: "Confirmar",
       create: "Crear",
+      create_item: 'Crear %{item}',
       delete: "Eliminar",
       edit: "Editar",
       expand: "Expandir",
