@@ -161,10 +161,14 @@ export const useReferenceManyToManyFieldController = (props: Options) => {
     }
   );
 
-  const ids = state?.data?.map((item) => get(item, relation));
+  let ids = [];
+
+  if (state.loaded) {
+    ids = state.ids.map((id) => get(state.data[id], relation));
+  }
 
   const { data, error, loaded, loading } = useGetMany(reference, ids, {
-    enabled: Array.isArray(ids) && ids.length > 0,
+    enabled: state.loaded && ids.length > 0,
   });
 
   return {
@@ -172,7 +176,12 @@ export const useReferenceManyToManyFieldController = (props: Options) => {
       ? basePath.replace(resource, reference)
       : `/${reference}`,
     currentSort: sort,
-    data,
+    data: data
+      .filter((r) => typeof r !== "undefined")
+      .reduce((prev, current) => {
+        prev[current.id] = current;
+        return prev;
+      }, {}),
     defaultTitle: null,
     displayedFilters,
     error,
