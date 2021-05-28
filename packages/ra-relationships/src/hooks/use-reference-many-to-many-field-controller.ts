@@ -131,9 +131,10 @@ export const useReferenceManyToManyFieldController = (props: Options) => {
     }
   });
 
-  const [target] = using.split(",");
+  const [target, relation] = using.split(",");
   const referenceId = get(record, source);
-  const { ids } = useGetManyReference(
+
+  const state = useGetManyReference(
     through,
     target,
     referenceId,
@@ -159,6 +160,8 @@ export const useReferenceManyToManyFieldController = (props: Options) => {
         ),
     }
   );
+
+  const ids = state?.data?.map((item) => get(item, relation));
 
   const { data, error, loaded, loading } = useGetMany(reference, ids, {
     enabled: Array.isArray(ids) && ids.length > 0,
