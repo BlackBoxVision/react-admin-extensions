@@ -15,6 +15,7 @@ const spanishMessages: TranslationMessages = {
       close_menu: "Cerrar menú",
       confirm: "Confirmar",
       create: "Crear",
+      create_item: "Crear %{item}",
       delete: "Eliminar",
       edit: "Editar",
       expand: "Expandir",
@@ -30,6 +31,7 @@ const spanishMessages: TranslationMessages = {
       sort: "Ordenar",
       undo: "Deshacer",
       unselect: "Deseleccionar",
+      update: 'Actualizar',
     },
     auth: {
       auth_check_error: "Por favor inicie sesión para continuar",
@@ -76,6 +78,10 @@ const spanishMessages: TranslationMessages = {
         "¿Seguro que quiere eliminar este %{name}? |||| ¿Seguro que quiere eliminar estos %{smart_count} items?",
       bulk_delete_title:
         "Eliminar %{name} |||| Eliminar %{smart_count} %{name} items",
+      bulk_update_content:
+        "¿Seguro que quiere actualizar este %{name}? |||| ¿Seguro que quiere atualizar estos %{smart_count} items?",
+      bulk_update_title:
+        "Actualizar %{name} |||| Actualizar %{smart_count} %{name} items",
       delete_content: "¿Seguro que quiere eliminar este item?",
       delete_title: "Eliminar %{name} #%{id}",
       details: "Detalles",
