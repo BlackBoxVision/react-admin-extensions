@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@blackbox-vision/ra-layout": "0.0.23",
+    "json-server": "^0.16.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
