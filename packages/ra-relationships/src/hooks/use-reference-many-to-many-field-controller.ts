@@ -177,8 +177,8 @@ export const useReferenceManyToManyFieldController = (props: Options) => {
       : `/${reference}`,
     currentSort: sort,
     data: data
-      .filter((r) => typeof r !== "undefined")
-      .reduce((prev, current) => {
+      ?.filter((r) => typeof r !== "undefined")
+      ?.reduce((prev, current) => {
         prev[current.id] = current;
         return prev;
       }, {}),
@@ -203,6 +203,6 @@ export const useReferenceManyToManyFieldController = (props: Options) => {
     setPerPage,
     setSort,
     showFilter,
-    total: data && data.length,
+    total: data?.length,
   };
 };
