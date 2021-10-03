@@ -24,7 +24,7 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
     const styles = useStyles();
 
     const renderItems = useCallback(
-      ({ type, name, label, filter, icon: Icon, items: subItems }) => {
+      ({ type, name, search, label, filter, icon: Icon, items: subItems }) => {
         if (type === "group") {
           return (
             <CollapsibleMenu
@@ -46,6 +46,7 @@ export const NestedMenu: React.FC<NestedMenuProps> = React.memo(
             to={{
               pathname: `/${name}`,
               search: qs.stringify({
+                ...search,
                 filter: JSON.stringify(filter),
               }),
             }}
