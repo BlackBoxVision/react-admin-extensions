@@ -21,17 +21,21 @@ const spanishMessages: TranslationMessages = {
       expand: "Expandir",
       export: "Exportar",
       list: "Listar",
+      move_up: "Mover arriba",
+      move_down: "Mover abajo",
       open_menu: "Abrir menú",
       refresh: "Refrescar",
       remove: "Borrar",
       remove_filter: "Borrar filtro",
       save: "Guardar",
       search: "Buscar",
+      select_all: "Seleccionar todo",
+      select_row: "Seleccionar esta fila",
       show: "Mostrar",
       sort: "Ordenar",
       undo: "Deshacer",
       unselect: "Deseleccionar",
-      update: 'Actualizar',
+      update: "Actualizar",
     },
     auth: {
       auth_check_error: "Por favor inicie sesión para continuar",
@@ -79,7 +83,7 @@ const spanishMessages: TranslationMessages = {
       bulk_delete_title:
         "Eliminar %{name} |||| Eliminar %{smart_count} %{name} items",
       bulk_update_content:
-        "¿Seguro que quiere actualizar este %{name}? |||| ¿Seguro que quiere atualizar estos %{smart_count} items?",
+        "¿Seguro que quiere actualizar este %{name}? |||| ¿Seguro que quiere actualizar estos %{smart_count} items?",
       bulk_update_title:
         "Actualizar %{name} |||| Actualizar %{smart_count} %{name} items",
       delete_content: "¿Seguro que quiere eliminar este item?",
@@ -129,6 +133,7 @@ const spanishMessages: TranslationMessages = {
         "Elemento actualizado |||| %{smart_count} elementos actualizados",
       i18n_error:
         "No se pudieron cargar las traducciones para el idioma especificado",
+      not_authorized: "No tiene autorización para acceder a este recurso.",
     },
     page: {
       create: "Crear %{name}",
