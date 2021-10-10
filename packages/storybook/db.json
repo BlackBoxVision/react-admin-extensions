@@ -1,0 +1,87 @@
+{
+  "performances": [
+    {
+      "id": 8,
+      "band_id": 4,
+      "venue_id": 3,
+      "date": "2017-08-06"
+    },
+    {
+      "id": 7,
+      "band_id": 1,
+      "venue_id": 3,
+      "date": "2018-01-17"
+    },
+    {
+      "id": 6,
+      "band_id": 2,
+      "venue_id": 3,
+      "date": "2016-04-23"
+    },
+    {
+      "id": 5,
+      "band_id": 3,
+      "venue_id": 3,
+      "date": "2019-07-28"
+    }
+  ],
+  "venues": [
+    {
+      "id": 5,
+      "name": "Barclays Center",
+      "location": "Brooklyn"
+    },
+    {
+      "id": 4,
+      "name": "Bridgestone Arena",
+      "location": "Nashville"
+    },
+    {
+      "id": 7,
+      "name": "Fenway Park",
+      "location": "Boston"
+    },
+    {
+      "id": 1,
+      "name": "Madison Square Garden",
+      "location": "New York"
+    },
+    {
+      "id": 2,
+      "name": "Staples Center",
+      "location": "Los Angeles"
+    },
+    {
+      "id": 6,
+      "name": "Wrigley Field",
+      "location": "Chicago"
+    },
+    {
+      "id": 3,
+      "name": "Yankee Stadium",
+      "location": "New York"
+    }
+  ],
+  "bands": [
+    {
+      "id": 1,
+      "name": "Radiohead"
+    },
+    {
+      "id": 2,
+      "name": "Coldplay"
+    },
+    {
+      "id": 3,
+      "name": "Foo Fighters"
+    },
+    {
+      "id": 4,
+      "name": "Green Day"
+    },
+    {
+      "id": 7,
+      "name": "LCD Soundsystem"
+    }
+  ]
+}

@@ -3,10 +3,10 @@ import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { Admin, Resource, ListGuesser } from "react-admin";
 
+import { authProvider } from "../src/providers/authProvider";
+import { dataProvider } from "../src/providers/dataProvider";
+import Layout from "../src/components/Layout";
 import { items } from "../src/menu";
-import { authProvider } from "../src/authProvider";
-import { dataProvider } from "../src/dataProvider";
-import Layout from "../src/my-layout";
 import { theme } from "../src/theme";
 
 <Meta title="UI-UX/RA Layout" component={Layout} />
