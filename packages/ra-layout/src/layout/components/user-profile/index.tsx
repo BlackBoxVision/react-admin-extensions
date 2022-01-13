@@ -35,11 +35,11 @@ export const UserProfile: React.FC<UserProfileProps> = ({ layoutStyles }) => {
                 <Avatar
                   src={user.avatar}
                   alt={user.fullName}
-                  className={styles.small}
+                  className={clsx(styles.small, layoutStyles.avatar)}
                 />
               )}
               {(!user || (!!user && !user.avatar)) && (
-                <Avatar alt={user?.fullName} className={styles.small}>
+                <Avatar alt={user?.fullName} className={clsx(styles.small, layoutStyles.avatar)}>
                   {firstLetters}
                 </Avatar>
               )}

@@ -42,6 +42,10 @@ export type LayoutStylesProps = {
    * Styles applied to logout button
    */
   logoutButton?: any;
+  /**
+   * Styles applied to user profile avatar
+   */
+  avatar?: any
 };
 
 // TODO: improve typings
@@ -56,6 +60,8 @@ export type LayoutProps = {
   iconStyle?: any;
   sidebarOpenWidth?: number;
   sidebarClosedWidth?: number;
+  sidebarElevation?: number
+  showDividers?: boolean
 };
 
 export const Layout: React.FC<LayoutProps> = ({
@@ -70,6 +76,8 @@ export const Layout: React.FC<LayoutProps> = ({
   iconStyle,
   sidebarOpenWidth,
   sidebarClosedWidth,
+  sidebarElevation = 2,
+  showDividers = true
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const dispatch = useDispatch();
@@ -101,6 +109,8 @@ export const Layout: React.FC<LayoutProps> = ({
             sidebarClosedWidth={sidebarClosedWidth}
             layoutStyles={layoutStyles}
             iconStyle={iconStyle}
+            showDividers={showDividers}
+            sidebarElevation={sidebarElevation}
           >
             <Menu
               items={items}

@@ -15,6 +15,8 @@ export type SideDrawerProps = {
   iconStyle: any;
   sidebarOpenWidth: number;
   sidebarClosedWidth: number;
+  sidebarElevation: number
+  showDividers: boolean
 };
 
 export const SideDrawer: React.FC<SideDrawerProps> = ({
@@ -24,6 +26,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
   iconStyle,
   sidebarOpenWidth,
   sidebarClosedWidth,
+  sidebarElevation,
+  showDividers
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const logout: any = useLogout();
@@ -53,14 +57,14 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
           [layoutStyles.sidebarWhenOpen]: !!layoutStyles.sidebarWhenOpen,
           [layoutStyles.sidebarWhenClosed]: !!layoutStyles.sidebarWhenClosed,
         }),
-        elevation: 2,
+        elevation: sidebarElevation
       }}
     >
       <>
         <UserProfile layoutStyles={layoutStyles} />
-        <Divider />
+        {showDividers && <Divider />}
         {children}
-        <Divider />
+        {showDividers && <Divider />}
         <MenuItemLink
           id="logout"
           to="/login"
