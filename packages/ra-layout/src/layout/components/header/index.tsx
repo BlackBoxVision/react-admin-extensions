@@ -5,9 +5,12 @@ import { Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
 
 // TODO: improve typings
-export type HeaderProps = {};
+export type HeaderProps = {
+  logo?: string
+  logoStyle?: any
+};
 
-export const Header: React.FC<HeaderProps> = (props) => {
+export const Header: React.FC<HeaderProps> = ({ logo, logoStyle, ...props }) => {
   const styles = useStyles();
 
   return (
@@ -18,6 +21,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
         id="react-admin-title"
         className={styles.title}
       />
+      {logo ? <img src={logo} alt="logo" style={logoStyle} /> : null}
     </AppBar>
   );
 };

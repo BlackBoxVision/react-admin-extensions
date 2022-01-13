@@ -62,6 +62,8 @@ export type LayoutProps = {
   sidebarClosedWidth?: number;
   sidebarElevation?: number
   showDividers?: boolean
+  logo?: string
+  logoStyle: any
 };
 
 export const Layout: React.FC<LayoutProps> = ({
@@ -77,7 +79,9 @@ export const Layout: React.FC<LayoutProps> = ({
   sidebarOpenWidth,
   sidebarClosedWidth,
   sidebarElevation = 2,
-  showDividers = true
+  showDividers = true,
+  logo,
+  logoStyle
 }) => {
   const isSidebarOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const dispatch = useDispatch();
@@ -96,6 +100,8 @@ export const Layout: React.FC<LayoutProps> = ({
         <AppBar
           title={title}
           open={isSidebarOpen}
+          logo={logo}
+          logoStyle={logoStyle}
           className={clsx({
             [styles.appBar]: true,
             [styles.appBarWhenSidebarOpen]: !!isSidebarOpen,
