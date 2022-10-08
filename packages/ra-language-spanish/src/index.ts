@@ -159,6 +159,20 @@ const spanishMessages: TranslationMessages = {
       required: "Requerido",
     },
   },
+  configurable: {
+    customize: "Personalizar",
+    configureMode: "Configurar esta página",
+    inspector: {
+      title: "Inspector",
+      content: "Posicione el cursor sobre los elementos que desea configurar",
+      reset: "Restablecer Configuración",
+    },
+    SimpleList: {
+      primaryText: "Texto primario",
+      secondaryText: "Texto secundario",
+      tertiaryText: "Texto terciario",
+    },
+  },
 };
 
 export default spanishMessages;
