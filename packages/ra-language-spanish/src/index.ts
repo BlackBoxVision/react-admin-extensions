@@ -1,6 +1,6 @@
 import { TranslationMessages } from "ra-core";
 
-const spanishMessages: TranslationMessages = {
+const spanishMessages: Required<TranslationMessages> = {
   ra: {
     action: {
       add: "Añadir",
@@ -36,6 +36,9 @@ const spanishMessages: TranslationMessages = {
       undo: "Deshacer",
       unselect: "Deseleccionar",
       update: "Actualizar",
+      open:"Abrir",
+      toggle_theme: "Alternar tema",
+      remove_all_filters: "Remover todos los filtros"
     },
     auth: {
       auth_check_error: "Por favor inicie sesión para continuar",
@@ -111,8 +114,13 @@ const spanishMessages: TranslationMessages = {
       page_out_of_boundaries: "Número de página %{page} fuera de los límites",
       page_range_info: "%{offsetBegin} - %{offsetEnd} de %{total}",
       page_rows_per_page: "Filas por página:",
-      prev: "Anterior",
+      previous: "Ir a la página anterior",
       skip_nav: "Saltar al contenido",
+      page: "Ir a la página %{page}",
+      first : "Ir a la primera página",
+      last: "Ir a la última página",
+      current_page: "Página %{page}",
+      partial_page_range_info: "%{offsetBegin}-%{offsetEnd} de mas de %{offsetEnd}"
     },
     sort: {
       sort_by: "Ordenar por %{field} %{order}",
@@ -158,6 +166,32 @@ const spanishMessages: TranslationMessages = {
       regex: "Debe coincidir con un formato específico (regexp): %{pattern}",
       required: "Requerido",
     },
+    configurable:{
+      configureMode: "Configurar esta página",
+      customize: "Personalizar",
+      inspector:{
+        reset: "Restablecer la configuración",
+        title: "Inspector",
+        content: "Pase el ratón por los elementos de la interfaz de usuario de la aplicación para configurarlos"
+      },
+      SimpleList:{
+        primaryText: "Texto principal",
+        secondaryText: "Texto secundario",
+        tertiaryText: "Texto terciario"
+      },
+      templateError: "## Template error",
+    },
+    saved_queries:{
+      help: "Filtrar la lista y guardar esta consulta para más tarde",
+      label: "Consultas guardadas",
+      query_name: "Nombre de la consulta",
+      new_label: "Guardar la consulta actual...",
+      remove_message: "¿Estás seguro de que quieres eliminar ese elemento de tu lista de consultas guardadas?",
+      new_dialog_title: "Guardar la consulta actual como",
+      remove_label: "Eliminar la consulta guardada",
+      remove_label_with_name: "Eliminar la consulta '%{name}'",
+      remove_dialog_title: "¿Eliminar la consulta guardada?"
+    }
   },
 };
 
