@@ -1,6 +1,6 @@
 {
   "name": "@blackbox-vision/ra-language-spanish",
-  "version": "3.19.10",
+  "version": "4.4.0",
   "description": "Spanish messages for react-admin, the frontend framework for building admin applications on top of REST/GraphQL services",
   "author": "JonatanSalas <jonatan.salas@blackbox-vision.tech>",
   "homepage": "https://github.com/BlackBoxVision/react-admin-extensions#readme",
@@ -41,9 +41,6 @@
       ],
       [
         "@pika/plugin-build-web"
-      ],
-      [
-        "@pika/plugin-build-types"
       ]
     ]
   }
