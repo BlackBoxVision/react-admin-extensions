@@ -11,13 +11,13 @@ export type UseGetCanActivateReturn = {
 export const useGetCanActivate = (): UseGetCanActivateReturn => {
   const canActivate = useContext(RbacContext);
 
-  const { loaded, permissions } = usePermissions();
+  const { isLoading, permissions } = usePermissions();
 
   return {
     canActivate: !!permissions
       ? (resource: string, action: string, field?: string) =>
           canActivate(permissions, resource, action, field)
       : null,
-    loaded: loaded && !!permissions,
+    loaded: !isLoading && !!permissions,
   };
 };
