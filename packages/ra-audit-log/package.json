@@ -41,9 +41,6 @@
       ],
       [
         "@pika/plugin-build-web"
-      ],
-      [
-        "@pika/plugin-build-types"
       ]
     ]
   }
