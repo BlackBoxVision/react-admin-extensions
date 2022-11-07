@@ -31,7 +31,8 @@
     "typescript": "^3.9.7"
   },
   "peerDependencies": {
-    "react": "^16.11.0"
+    "react": "*",
+    "react-admin": "*"
   },
   "@pika/pack": {
     "pipeline": [
