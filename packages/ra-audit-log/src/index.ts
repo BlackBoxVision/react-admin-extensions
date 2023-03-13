@@ -88,16 +88,26 @@ function enhanceWithEventTracking(
   }
 
   return async function (resource: string, params: any) {
+    let response = await dataProvider?.[action]?.(resource, params);
+    let newParams = params;
+
+    if (!params.id) {
+      newParams = {
+        ...params,
+        id: response?.data?.id,
+      };
+    }
+
     await createNewEvent(
       authProvider,
       dataProvider,
       action,
       resource,
-      params,
+      newParams,
       options
     );
 
-    return await dataProvider?.[action]?.(resource, params);
+    return response;
   };
 }
 
