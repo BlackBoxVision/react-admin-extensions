@@ -39,7 +39,7 @@ const spanishMessages: Required<TranslationMessages> = {
       move_down: "Mover abajo",
       open:"Abrir",
       toggle_theme: "Alternar tema",
-      select_columns: "Columns",
+      select_columns: "Columnas",
     },
     boolean: {
       true: "Sí",
