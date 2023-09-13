@@ -40,6 +40,7 @@ const spanishMessages: Required<TranslationMessages> = {
       open:"Abrir",
       toggle_theme: "Alternar tema",
       select_columns: "Columnas",
+      update_application: 'Recargar Aplicación',
     },
     boolean: {
       true: "Sí",
@@ -156,6 +157,7 @@ const spanishMessages: Required<TranslationMessages> = {
       canceled: "Acción cancelada",
       logged_out: "Su sesión ha finalizado, vuelva a conectarse.",
       not_authorized: "No tiene autorización para acceder a este recurso.",
+      application_update_available: 'Una nueva versión está disponible.',
     },
     validation: {
       required: "Requerido",
