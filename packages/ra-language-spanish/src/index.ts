@@ -40,6 +40,7 @@ const spanishMessages: Required<TranslationMessages> = {
       open:"Abrir",
       toggle_theme: "Alternar tema",
       select_columns: "Columnas",
+      update_application: 'Cargar Aplicación',
     },
     boolean: {
       true: "Sí",
@@ -156,6 +157,7 @@ const spanishMessages: Required<TranslationMessages> = {
       canceled: "Acción cancelada",
       logged_out: "Su sesión ha finalizado, vuelva a conectarse.",
       not_authorized: "No tiene autorización para acceder a este recurso.",
+      application_update_available: 'Hay una versión nueva disponible.',
     },
     validation: {
       required: "Requerido",
@@ -167,6 +169,7 @@ const spanishMessages: Required<TranslationMessages> = {
       email: "Debe ser un correo electrónico válido",
       oneOf: "Debe ser uno de: %{options}",
       regex: "Debe coincidir con un formato específico (regexp): %{pattern}",
+      unique: 'Debe ser único',
     },
     saved_queries:{
       label: "Consultas guardadas",
