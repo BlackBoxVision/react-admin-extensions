@@ -22,9 +22,12 @@ const spanishMessages: Required<TranslationMessages> = {
       remove_filter: "Borrar filtro",
       remove_all_filters: "Remover todos los filtros",
       remove: "Borrar",
+      reset: "Restablecer",
       save: "Guardar",
       search: "Buscar",
+      search_columns: "Buscar columnas",
       select_all: "Seleccionar todo",
+      select_all_button: "Seleccionar todo",
       select_row: "Seleccionar esta fila",
       show: "Mostrar",
       sort: "Ordenar",
@@ -58,6 +61,8 @@ const spanishMessages: Required<TranslationMessages> = {
       show: "%{name} #%{id}",
       empty: "Sin %{name} todavía.",
       invite: "¿Quiere agregar una?",
+      access_denied: "Acceso denegado",
+      authentication_error: "Error de autenticación",
     },
     input: {
       file: {
@@ -84,7 +89,11 @@ const spanishMessages: Required<TranslationMessages> = {
     },
     message: {
       about: "Acerca de",
+      access_denied:
+        "No tienes los permisos necesarios para acceder a esta página",
       are_you_sure: "¿Está seguro?",
+      authentication_error:
+        "El servidor de autenticación devolvió un error y no se pudieron verificar tus credenciales",
       auth_error:
         "Ocurrió un error al validar el token de autenticación.",
       bulk_delete_content:
@@ -99,19 +108,24 @@ const spanishMessages: Required<TranslationMessages> = {
       delete_content: "¿Seguro que quiere eliminar este item?",
       delete_title: "Eliminar %{name} #%{id}",
       details: "Detalles",
-      error:
+      error: 
         "Se produjo un error en el cliente y su solicitud no se pudo completar",
-      invalid_form:
+      invalid_form: 
         "El formulario no es válido. Por favor verifique si hay errores",
       loading: "La página se está cargando, espere un momento por favor",
       no: "No",
       not_found:
         "O bien escribió una URL incorrecta o siguió un enlace incorrecto.",
+      select_all_limit_reached:
+        "Hay demasiados elementos para seleccionarlos todos. Solo se seleccionaron los primeros %{max} elementos.",
       yes: "Sí",
       unsaved_changes:
-        "Algunos de sus cambios no se guardaron. ¿Está seguro que quiere ignorarlos?",
+        "Algunos de sus cambios no se guardaron. ¿Está seguro que quiere ignorarlos?",        
+      placeholder_data_warning: "Problema de red: falló la actualización de datos.",
     },
     navigation: {
+      clear_filters: "Borrar filtros",
+      no_filtered_results: "No se encontró %{name} usando los filtros actuales.",
       no_results: "No se han encontrado resultados",
       no_more_results:
         "El número de página %{page} está fuera de los límites. Pruebe la página anterior.",
@@ -139,6 +153,7 @@ const spanishMessages: Required<TranslationMessages> = {
       user_menu: "Perfil",
       username: "Usuario",
       password: "Contraseña",
+      email: 'Correo electrónico',
       sign_in: "Acceder",
       sign_in_error: "La autenticación falló, por favor, vuelva a intentarlo",
       logout: "Cerrar Sesión",
@@ -158,6 +173,7 @@ const spanishMessages: Required<TranslationMessages> = {
       logged_out: "Su sesión ha finalizado, vuelva a conectarse.",
       not_authorized: "No tiene autorización para acceder a este recurso.",
       application_update_available: 'Una nueva versión está disponible.',
+      offline: "Sin conexión. No se pudieron obtener los datos.",
     },
     validation: {
       required: "Requerido",
@@ -169,6 +185,7 @@ const spanishMessages: Required<TranslationMessages> = {
       email: "Debe ser un correo electrónico válido",
       oneOf: "Debe ser uno de: %{options}",
       regex: "Debe coincidir con un formato específico (regexp): %{pattern}",
+      unique: "Debe ser único",
     },
     saved_queries:{
       label: "Consultas guardadas",
