@@ -108,9 +108,9 @@ const spanishMessages: Required<TranslationMessages> = {
       delete_content: "¿Seguro que quiere eliminar este item?",
       delete_title: "Eliminar %{name} #%{id}",
       details: "Detalles",
-      error: 
+      error:
         "Se produjo un error en el cliente y su solicitud no se pudo completar",
-      invalid_form: 
+      invalid_form:
         "El formulario no es válido. Por favor verifique si hay errores",
       loading: "La página se está cargando, espere un momento por favor",
       no: "No",
