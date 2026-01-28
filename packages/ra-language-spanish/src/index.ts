@@ -53,12 +53,12 @@ const spanishMessages: Required<TranslationMessages> = {
     page: {
       create: "Crear %{name}",
       dashboard: "Tablero",
-      edit: "%{name} #%{id}",
+      edit: "%{name} %{recordRepresentation}",
       error: "Algo salió mal",
       list: "Lista de %{name}",
       loading: "Cargando",
       not_found: "No encontrado",
-      show: "%{name} #%{id}",
+      show: "%{name} %{recordRepresentation}",
       empty: "Sin %{name} todavía.",
       invite: "¿Quiere agregar una?",
       access_denied: "Acceso denegado",
@@ -101,12 +101,12 @@ const spanishMessages: Required<TranslationMessages> = {
       bulk_delete_title:
         "Eliminar %{name} |||| Eliminar %{smart_count} %{name} items",
       bulk_update_content:
-        "¿Seguro que quiere actualizar este %{name}? |||| ¿Seguro que quiere actualizar estos %{smart_count} items?",
+        "¿Seguro que quiere actualizar este %{name} %{recordRepresentation}? |||| ¿Seguro que quiere actualizar estos %{smart_count} items?",
       bulk_update_title:
-        "Actualizar %{name} |||| Actualizar %{smart_count} %{name} items",
+        "Actualizar %{name} %{recordRepresentation} |||| Actualizar %{smart_count} %{name} items",
       clear_array_input: "¿Estás seguro de que quieres borrar toda la lista?",
-      delete_content: "¿Seguro que quiere eliminar este item?",
-      delete_title: "Eliminar %{name} #%{id}",
+      delete_content: "¿Seguro que quiere eliminar este %{name}?",
+      delete_title: "Eliminar %{name} %{recordRepresentation}",
       details: "Detalles",
       error:
         "Se produjo un error en el cliente y su solicitud no se pudo completar",
@@ -126,7 +126,7 @@ const spanishMessages: Required<TranslationMessages> = {
     navigation: {
       clear_filters: "Borrar filtros",
       no_filtered_results: "No se encontró %{name} usando los filtros actuales.",
-      no_results: "No se han encontrado resultados",
+      no_results: "No se ha encontrado %{name}",
       no_more_results:
         "El número de página %{page} está fuera de los límites. Pruebe la página anterior.",
       page_out_of_boundaries: "Número de página %{page} fuera de los límites",
@@ -144,7 +144,7 @@ const spanishMessages: Required<TranslationMessages> = {
       skip_nav: "Saltar al contenido",
     },
     sort: {
-      sort_by: "Ordenar por %{field} %{order}",
+      sort_by: "Ordenar por %{field_lower_first} %{order}",
       ASC: "ascendente",
       DESC: "descendente",
     },
@@ -209,7 +209,7 @@ const spanishMessages: Required<TranslationMessages> = {
         showAll: "Mostrar Todos",
       },
       Datagrid: {
-        title: "Table Datos",
+        title: "Tabla de Datos",
         unlabeled: "Columna #%{column} sin etiqueta",
       },
       SimpleForm: {
