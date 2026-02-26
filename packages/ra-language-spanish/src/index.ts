@@ -22,9 +22,12 @@ const spanishMessages: Required<TranslationMessages> = {
       remove_filter: "Borrar filtro",
       remove_all_filters: "Remover todos los filtros",
       remove: "Borrar",
+      reset: "Restablecer",
       save: "Guardar",
       search: "Buscar",
+      search_columns: "Buscar columnas",
       select_all: "Seleccionar todo",
+      select_all_button: "Seleccionar todo",
       select_row: "Seleccionar esta fila",
       show: "Mostrar",
       sort: "Ordenar",
@@ -50,14 +53,16 @@ const spanishMessages: Required<TranslationMessages> = {
     page: {
       create: "Crear %{name}",
       dashboard: "Tablero",
-      edit: "%{name} #%{id}",
+      edit: "%{name} %{recordRepresentation}",
       error: "Algo salió mal",
       list: "Lista de %{name}",
       loading: "Cargando",
       not_found: "No encontrado",
-      show: "%{name} #%{id}",
+      show: "%{name} %{recordRepresentation}",
       empty: "Sin %{name} todavía.",
       invite: "¿Quiere agregar una?",
+      access_denied: "Acceso denegado",
+      authentication_error: "Error de autenticación",
     },
     input: {
       file: {
@@ -84,7 +89,11 @@ const spanishMessages: Required<TranslationMessages> = {
     },
     message: {
       about: "Acerca de",
+      access_denied:
+        "No tienes los permisos necesarios para acceder a esta página",
       are_you_sure: "¿Está seguro?",
+      authentication_error:
+        "El servidor de autenticación devolvió un error y no se pudieron verificar tus credenciales",
       auth_error:
         "Ocurrió un error al validar el token de autenticación.",
       bulk_delete_content:
@@ -92,12 +101,12 @@ const spanishMessages: Required<TranslationMessages> = {
       bulk_delete_title:
         "Eliminar %{name} |||| Eliminar %{smart_count} %{name} items",
       bulk_update_content:
-        "¿Seguro que quiere actualizar este %{name}? |||| ¿Seguro que quiere actualizar estos %{smart_count} items?",
+        "¿Seguro que quiere actualizar este %{name} %{recordRepresentation}? |||| ¿Seguro que quiere actualizar estos %{smart_count} items?",
       bulk_update_title:
-        "Actualizar %{name} |||| Actualizar %{smart_count} %{name} items",
+        "Actualizar %{name} %{recordRepresentation} |||| Actualizar %{smart_count} %{name} items",
       clear_array_input: "¿Estás seguro de que quieres borrar toda la lista?",
-      delete_content: "¿Seguro que quiere eliminar este item?",
-      delete_title: "Eliminar %{name} #%{id}",
+      delete_content: "¿Seguro que quiere eliminar este %{name}?",
+      delete_title: "Eliminar %{name} %{recordRepresentation}",
       details: "Detalles",
       error:
         "Se produjo un error en el cliente y su solicitud no se pudo completar",
@@ -107,12 +116,17 @@ const spanishMessages: Required<TranslationMessages> = {
       no: "No",
       not_found:
         "O bien escribió una URL incorrecta o siguió un enlace incorrecto.",
+      select_all_limit_reached:
+        "Hay demasiados elementos para seleccionarlos todos. Solo se seleccionaron los primeros %{max} elementos.",
       yes: "Sí",
       unsaved_changes:
-        "Algunos de sus cambios no se guardaron. ¿Está seguro que quiere ignorarlos?",
+        "Algunos de sus cambios no se guardaron. ¿Está seguro que quiere ignorarlos?",        
+      placeholder_data_warning: "Problema de red: falló la actualización de datos.",
     },
     navigation: {
-      no_results: "No se han encontrado resultados",
+      clear_filters: "Borrar filtros",
+      no_filtered_results: "No se encontró %{name} usando los filtros actuales.",
+      no_results: "No se ha encontrado %{name}",
       no_more_results:
         "El número de página %{page} está fuera de los límites. Pruebe la página anterior.",
       page_out_of_boundaries: "Número de página %{page} fuera de los límites",
@@ -130,7 +144,7 @@ const spanishMessages: Required<TranslationMessages> = {
       skip_nav: "Saltar al contenido",
     },
     sort: {
-      sort_by: "Ordenar por %{field} %{order}",
+      sort_by: "Ordenar por %{field_lower_first} %{order}",
       ASC: "ascendente",
       DESC: "descendente",
     },
@@ -139,6 +153,7 @@ const spanishMessages: Required<TranslationMessages> = {
       user_menu: "Perfil",
       username: "Usuario",
       password: "Contraseña",
+      email: 'Correo electrónico',
       sign_in: "Acceder",
       sign_in_error: "La autenticación falló, por favor, vuelva a intentarlo",
       logout: "Cerrar Sesión",
@@ -158,6 +173,7 @@ const spanishMessages: Required<TranslationMessages> = {
       logged_out: "Su sesión ha finalizado, vuelva a conectarse.",
       not_authorized: "No tiene autorización para acceder a este recurso.",
       application_update_available: 'Una nueva versión está disponible.',
+      offline: "Sin conexión. No se pudieron obtener los datos.",
     },
     validation: {
       required: "Requerido",
@@ -169,6 +185,7 @@ const spanishMessages: Required<TranslationMessages> = {
       email: "Debe ser un correo electrónico válido",
       oneOf: "Debe ser uno de: %{options}",
       regex: "Debe coincidir con un formato específico (regexp): %{pattern}",
+      unique: "Debe ser único",
     },
     saved_queries:{
       label: "Consultas guardadas",
@@ -192,7 +209,7 @@ const spanishMessages: Required<TranslationMessages> = {
         showAll: "Mostrar Todos",
       },
       Datagrid: {
-        title: "Table Datos",
+        title: "Tabla de Datos",
         unlabeled: "Columna #%{column} sin etiqueta",
       },
       SimpleForm: {
